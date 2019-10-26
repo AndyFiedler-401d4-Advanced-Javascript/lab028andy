@@ -6,7 +6,7 @@ class List extends React.Component {
     return (
       <ul id='items'>
         {this.props.items.map(item => (
-          <Item item={item} key={item.id} removeTodo={this.props.removeTodo} toggleComplete={this.props.toggleComplete}/>
+          <Item item={item} key={item.id} removeTodo={this.props.removeTodo} toggleComplete={this.props.toggleComplete} showDetails={this.props.showDetails}/>
         ))}
       </ul>
     )

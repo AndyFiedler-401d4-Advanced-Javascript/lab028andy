@@ -3,6 +3,7 @@ import './styles/app.scss';
 import Header from './components/header';
 import List from './components/list';
 import Form from './components/form';
+import Details from './components/details';
 
 let id = 0;
 
@@ -16,15 +17,16 @@ class App extends React.Component {
   render() {
     return (
       <>
+      <Details item={this.state.itemToDetail} closeDetails={this.closeDetails} />
       <Header count={this.state.items.length}/>
       <Form addTodo={this.addTodo}/>
-      <List removeTodo={this.removeTodo} items={this.state.items} toggleComplete={this.toggleComplete}/>
+      <List removeTodo={this.removeTodo} items={this.state.items} toggleComplete={this.toggleComplete} showDetails={this.showDetails}/>
       </>
   );
   }
-  addTodo = (newTodo) => {
+  addTodo = (newTodo, assignedTo, date, difficulty) => {
     this.setState(state => {
-      state.items.push({text: newTodo, id: id++, complete: false});
+      state.items.push({text: newTodo, id: id++, assignedTo, difficulty, date, complete: false});
       return state;
     })
   }
@@ -40,6 +42,12 @@ class App extends React.Component {
       return state;
     })
   }
-}
+  showDetails = todo => {
+    this.setState(state => state.itemToDetail = todo);
+  }
+  closeDetails = () => {
+    this.setState(state => delete state.itemToDetail);
+    }
+  }
 
 export default App;

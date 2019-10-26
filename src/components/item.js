@@ -9,6 +9,10 @@ class Item extends React.Component{
   toggleComplete = e => {
     e.preventDefault();
     this.props.toggleComplete(this.props.item);
+  };
+  showDetails = e => {
+    e.preventDefault();
+    this.props.showDetails(this.props.item);
   }
 
   render() {
@@ -18,7 +22,8 @@ class Item extends React.Component{
           <span id={id} onClick={this.toggleComplete}>
             {text}
           </span>
-          <button onClick={this.removeTodo}>delete</button>
+          <button className="delete" onClick={this.removeTodo}>delete</button>
+          <button className='details' onClick={this.showDetails}>details</button>
         </li>
     )
   }
