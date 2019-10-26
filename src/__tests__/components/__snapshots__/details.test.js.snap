@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Details /> renders consistently 1`] = `
+<section
+  id="details"
+>
+  <div>
+    <header>
+      <button>
+        x
+      </button>
+    </header>
+    <p
+      className="text"
+    >
+      Test
+    </p>
+    <p
+      className="difficulty d3"
+    >
+      Difficulty: 
+      <span>
+        3
+      </span>
+    </p>
+    <p
+      className="assigned-to"
+    >
+      Assigned To: 
+      <span>
+        Me
+      </span>
+    </p>
+    <p
+      className="date"
+    >
+      Date: 
+      <span>
+        Today
+      </span>
+    </p>
+  </div>
+</section>
+`;

@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> renders consistently 1`] = `
+<header
+  id="header"
+>
+  <h2>
+    There are 
+     Items To Complete
+  </h2>
+</header>
+`;
